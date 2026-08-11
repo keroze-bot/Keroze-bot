@@ -1,30 +1,60 @@
-import os
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN ="7112530098:AAFbw9u-j0nRW8hJ3p6yA52wj8nV8ElGY0Y"
+CHAT_ID = 5955485014
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "🤖 KEROZE_BOT está funcionando!"
+async def branco_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(
+        chat_id=CHAT_ID,
+        text="⚪"
     )
 
-async def ajuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+async def id_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat = update.effective_chat
+
+    print(f"CHAT ID: {chat.id}")
+    print(f"CHAT: {chat.title}")
+
     await update.message.reply_text(
-        "Comandos disponíveis:\n/start\n/ajuda"
+        f"ID deste grupo: {chat.id}"
     )
+
+
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+
+CHAT_ID = 5955485014
+
+
+async def branco_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(
+        chat_id=CHAT_ID,
+        text="⚪"
+    )
+
+
+async def id_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat = update.effective_chat
+
+    print(f"CHAT ID: {chat.id}")
+    print(f"CHAT: {chat.title}")
+
+    await update.message.reply_text(
+        f"ID deste grupo: {chat.id}"
+    )
+
 
 def main():
-    if not TOKEN:
-        raise RuntimeError("TELEGRAM_TOKEN não configurado")
-
     app = Application.builder().token(TOKEN).build()
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("ajuda", ajuda))
+    app.add_handler(CommandHandler("branco", branco_command))
+    app.add_handler(CommandHandler("id", id_command))
 
-    print("KEROZE_BOT iniciado!")
+    print("BOT RODANDO...")
     app.run_polling()
+
 
 if __name__ == "__main__":
     main()

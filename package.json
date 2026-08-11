@@ -1,0 +1,21 @@
+{
+  "name": "keroze-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "b1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keroze-bot/keroze-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/keroze-bot/keroze-bot/issues"
+  },
+  "homepage": "https://github.com/keroze-bot/keroze-bot#readme"
+}
