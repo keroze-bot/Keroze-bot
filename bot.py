@@ -18,7 +18,7 @@ async def id_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     print(f"CHAT ID: {chat.id}")
     print(f"CHAT: {chat.title}")
-
+i9
     await update.message.reply_text(
         f"ID deste grupo: {chat.id}"
     )
