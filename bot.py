@@ -3,7 +3,7 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-TOKEN ="7112530098:AAFbw9u-j0nRW8hJ3p6yA52wj8nV8ElGY0Y"
+TOKEN ="7112530098:AAEiePhA_dVdhWMp-IrbAnZ-5jh4DO08_nQ"
 CHAT_ID = 5955485014
 
 async def branco_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
